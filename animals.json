@@ -1,44 +1,42 @@
-{
-  "animals": [
+ [
     {
-      "name": "dog",
-      "japanese": "犬"
+      "word": "dog",
+      "meaning": "犬"
     },
     {
-      "name": "cat",
-      "japanese": "猫"
+      "word": "cat",
+      "meaning": "猫"
     },
     {
-      "name": "elephant",
-      "japanese": "象"
+      "word": "elephant",
+      "meaning": "象"
     },
     {
-      "name": "lion",
-      "japanese": "ライオン"
+      "word": "lion",
+      "meaning": "ライオン"
     },
     {
-      "name": "tiger",
-      "japanese": "トラ"
+      "word": "tiger",
+      "meaning": "トラ"
     },
     {
-      "name": "giraffe",
-      "japanese": "キリン"
+      "word": "giraffe",
+      "meaning": "キリン"
     },
     {
-      "name": "panda",
-      "japanese": "パンダ"
+      "word": "panda",
+      "meaning": "パンダ"
     },
     {
-      "name": "koala",
-      "japanese": "コアラ"
+      "word": "koala",
+      "meaning": "コアラ"
     },
     {
-      "name": "penguin",
-      "japanese": "ペンギン"
+      "word": "penguin",
+      "meaning": "ペンギン"
     },
     {
-      "name": "monkey",
-      "japanese": "猿"
+      "word": "monkey",
+      "meaning": "猿"
     }
   ]
-}
