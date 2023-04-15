@@ -1,0 +1,44 @@
+{
+  "animals": [
+    {
+      "name": "dog",
+      "japanese": "犬"
+    },
+    {
+      "name": "cat",
+      "japanese": "猫"
+    },
+    {
+      "name": "elephant",
+      "japanese": "象"
+    },
+    {
+      "name": "lion",
+      "japanese": "ライオン"
+    },
+    {
+      "name": "tiger",
+      "japanese": "トラ"
+    },
+    {
+      "name": "giraffe",
+      "japanese": "キリン"
+    },
+    {
+      "name": "panda",
+      "japanese": "パンダ"
+    },
+    {
+      "name": "koala",
+      "japanese": "コアラ"
+    },
+    {
+      "name": "penguin",
+      "japanese": "ペンギン"
+    },
+    {
+      "name": "monkey",
+      "japanese": "猿"
+    }
+  ]
+}
