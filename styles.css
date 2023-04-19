@@ -28,7 +28,7 @@ main {
 
 #word-display {
   margin: 30px;
-  font-size: 24px;
+  font-size: 3.0rem;
   text-align: center;
 }
 
@@ -37,7 +37,7 @@ main {
 }
 
 #japanese-word {
-  font-size: 18px;
+  font-size: 2.0rem;
 }
 
 #timer-container {
@@ -63,6 +63,10 @@ input {
   background-color: #FFF;
   width: 400px;
   display: inline-block;
+}
+
+#typed-word {
+  font-size: 2.4rem;
 }
 
 button {
