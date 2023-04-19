@@ -1,14 +1,236 @@
-[
-  {
-    "word": "apple",
-    "meaning": "リンゴ"
-  },
-  {
-    "word": "banana",
-    "meaning": "バナナ"
-  },
-  {
-    "word": "orange",
-    "meaning": "オレンジ"
-  }
-]
+{
+  "sentences": [
+    {
+      "word": "abundant",
+      "meaning": "豊富な"
+    },
+    {
+      "word": "admire",
+      "meaning": "感心する"
+    },
+    {
+      "word": "analysis",
+      "meaning": "分析"
+    },
+    {
+      "word": "appropriate",
+      "meaning": "適切な"
+    },
+    {
+      "word": "arrogant",
+      "meaning": "傲慢な"
+    },
+    {
+      "word": "benefit",
+      "meaning": "利益、恩恵"
+    },
+    {
+      "word": "challenge",
+      "meaning": "課題、挑戦"
+    },
+    {
+      "word": "clumsy",
+      "meaning": "不器用な"
+    },
+    {
+      "word": "collaborate",
+      "meaning": "協力する"
+    },
+    {
+      "word": "conclude",
+      "meaning": "結論づける"
+    },
+    {
+      "word": "confident",
+      "meaning": "自信がある"
+    },
+    {
+      "word": "contribute",
+      "meaning": "貢献する"
+    },
+    {
+      "word": "courage",
+      "meaning": "勇気"
+    },
+    {
+      "word": "criticize",
+      "meaning": "批評する"
+    },
+    {
+      "word": "culture",
+      "meaning": "文化"
+    },
+    {
+      "word": "defend",
+      "meaning": "守る、防御する"
+    },
+    {
+      "word": "delight",
+      "meaning": "喜び、楽しみ"
+    },
+    {
+      "word": "demonstrate",
+      "meaning": "証明する"
+    },
+    {
+      "word": "desperate",
+      "meaning": "必死の、切望する"
+    },
+    {
+      "word": "distract",
+      "meaning": "気を散らす"
+    },
+    {
+      "word": "encourage",
+      "meaning": "励ます、促す"
+    },
+    {
+      "word": "environment",
+      "meaning": "環境"
+    },
+    {
+      "word": "fascinate",
+      "meaning": "魅了する"
+    },
+    {
+      "word": "fault",
+      "meaning": "誤り、欠点"
+    },
+    {
+      "word": "grateful",
+      "meaning": "感謝している"
+    },
+    {
+      "word": "habit",
+      "meaning": "習慣"
+    },
+    {
+      "word": "harsh",
+      "meaning": "厳しい、過酷な"
+    },
+    {
+      "word": "identify",
+      "meaning": "特定する、確認する"
+    },
+    {
+      "word": "ignorant",
+      "meaning": "無知な"
+    },
+    {
+      "word": "impressive",
+      "meaning": "印象的な"
+    },
+    {
+      "word": "inferior",
+      "meaning": "劣った、下位の"
+    },
+    {
+      "word": "influence",
+      "meaning": "影響"
+    },
+    {
+      "word": "innocent",
+      "meaning": "無罪の、純真な"
+    },
+    {
+      "word": "introduce",
+      "meaning": "紹介する"
+    },
+    {
+      "word": "jealous",
+      "meaning": "嫉妬深い"
+    },
+    {
+      "word": "justice",
+      "meaning": "正義"
+    },
+    {
+      "word": "leisure",
+      "meaning": "暇な時間、余暇"
+    },
+    {
+      "word": "limit",
+      "meaning": "制限"
+    },
+    {
+      "word": "mature",
+      "meaning": "成熟した"
+    },
+    {
+      "word": "opportunity",
+      "meaning": "機会"
+    },
+    {
+      "word": "perceive",
+      "meaning": "知覚する、理解する"
+    },
+    {
+      "word": "positive",
+      "meaning": "積極的な、肯定的な"
+    },
+    {
+      "word": "precise",
+      "meaning": "正確な"
+    },
+    {
+      "word": "prohibit",
+      "meaning": "禁止する"
+    },
+    {
+      "word": "protect",
+      "meaning": "守る、保護する"
+    },
+    {
+      "word": "respect",
+      "meaning": "尊敬する"
+    },
+    {
+      "word": "sincere",
+      "meaning": "誠実な"
+    },
+    {
+      "word": "struggle",
+      "meaning": "苦闘する、もがく"
+    },
+    {
+      "word": "sympathy",
+      "meaning": "同情、共感"
+    },
+    {
+      "word": "threat",
+      "meaning": "脅威"
+    },
+    {
+      "word": "tolerate",
+      "meaning": "我慢する、許容する"
+    },
+    {
+      "word": "trust",
+      "meaning": "信頼する"
+    },
+    {
+      "word": "unique",
+      "meaning": "ユニークな、独特の"
+    },
+    {
+      "word": "urge",
+      "meaning": "促す、迫る"
+    },
+    {
+      "word": "vivid",
+      "meaning": "鮮やかな、生き生きとした"
+    },
+    {
+      "word": "willing",
+      "meaning": "進んでやる、喜んでやる"
+    },
+    {
+      "word": "yearn",
+      "meaning": "切望する、慕う"
+    },
+    {
+      "word": "zeal",
+      "meaning": "熱意、熱中"
+    }
+  ]
+}

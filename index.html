@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Typing Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイピング練習</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="game-container">
-    <div id="word-container"></div>
-    <input id="input-box" type="text" autofocus>
-  </div>
-  <script src="typing-game.js"></script>
+    <header>
+        <h1>タイピング練習</h1>
+    </header>
+    <main>
+        <div id="word-display">
+            <p id="english-word"></p>
+            <p id="japanese-word"></p>
+        </div>
+        <div id="timer-container">
+            <p id="timer">60</p>
+        </div>
+        <div id="input-container">
+          <div>
+            <input type="text" id="typed-word" disabled>
+          </div>
+            <button id="start-btn">開始</button>
+        </div>
+        <div id="results-container">
+            <div id="results" style="display: none;">
+                <h2>結果</h2>
+                <p id="correct-chars">正しい入力文字数: 0</p>
+                <p id="chars-per-second">一秒あたりの入力文字数: 0.00</p>
+                <p id="mistakes">タイプミスの回数: 0</p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
