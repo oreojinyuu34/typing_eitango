@@ -67,6 +67,7 @@ input {
 
 #typed-word {
   font-size: 2.4rem;
+  text-align: center;
 }
 
 button {
@@ -87,6 +88,7 @@ button:hover {
 
 #results-container {
   margin-top: 50px;
+  text-align: center;
 }
 
 #results {

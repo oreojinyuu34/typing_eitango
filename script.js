@@ -20,29 +20,41 @@ function displayWord(word) {
 }
 
 function checkTyping(e) {
-  const typedWord = e.target.value;
-  const englishWordElement = document.getElementById("english-word");
-  const typedLetters = typedWord.split("");
-  const targetLetters = currentWord.word.split("");
-  const coloredLetters = targetLetters.map((letter, index) => {
-    if (index < typedLetters.length) {
-      if (letter === typedLetters[index]) {
-        correctChars++;
-        return `<span style="color: green">${letter}</span>`;
-      } else {
-        mistakes++;
-        return `<span style="color: red">${letter}</span>`;
-      }
-    } else {
-      return letter;
-    }
-  });
-  englishWordElement.innerHTML = coloredLetters.join("");
+  if (e.key === " ") {
+    const typedWord = e.target.value.trim();
+    const englishWordElement = document.getElementById("english-word");
 
-  if (typedWord === currentWord.word) {
-    e.target.value = "";
-    currentWord = getRandomWord(words);
-    displayWord(currentWord);
+    if (typedWord === currentWord.word) {
+      correctChars += typedWord.length;
+      e.target.value = "";
+      currentWord = getRandomWord(words);
+      displayWord(currentWord);
+    }
+  } else {
+    const typedWord = e.target.value;
+    const englishWordElement = document.getElementById("english-word");
+    const typedLetters = typedWord.split("");
+    const targetLetters = currentWord.word.split("");
+    let isError = false;
+
+    const coloredLetters = targetLetters.map((letter, index) => {
+      if (index < typedLetters.length) {
+        if (letter === typedLetters[index]) {
+          return `<span style="color: green">${letter}</span>`;
+        } else {
+          isError = true;
+          return `<span style="color: red">${letter}</span>`;
+        }
+      } else {
+        return letter;
+      }
+    });
+
+    englishWordElement.innerHTML = coloredLetters.join("");
+
+    if (isError) {
+      mistakes++;
+    }
   }
 }
 
@@ -66,6 +78,8 @@ function startTimer() {
     if (timeLeft <= 0) {
       clearInterval(timer);
       document.getElementById("typed-word").disabled = true;
+      document.getElementById("start-btn").disabled = false;
+      document.getElementById("start-btn").textContent = "もう一度";
       document.getElementById("results").style.display = "block";
       document.getElementById(
         "correct-chars"
@@ -82,15 +96,28 @@ function startTimer() {
 }
 
 document.getElementById("start-btn").addEventListener("click", () => {
+  // リセット処理
+  correctChars = 0;
+  mistakes = 0;
+  document.getElementById("typed-word").value = "";
+  document.getElementById("english-word").innerHTML = "";
+  document.getElementById("japanese-word").innerHTML = "";
+  document.getElementById("results").style.display = "none";
+
+  // ゲーム開始
   document.getElementById("start-btn").disabled = true;
   document.getElementById("typed-word").disabled = false;
   document.getElementById("typed-word").focus();
   startTimer();
+
+  // 初回の単語を表示
+  currentWord = getRandomWord(words);
+  displayWord(currentWord);
 });
 
 loadWords().then((loadedWords) => {
   words = loadedWords;
   currentWord = getRandomWord(words);
   displayWord(currentWord);
-  document.getElementById("typed-word").addEventListener("input", checkTyping);
+  document.getElementById("typed-word").addEventListener("keyup", checkTyping);
 });
