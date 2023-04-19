@@ -61,7 +61,8 @@ input {
   border: none;
   border-radius: 5px;
   background-color: #FFF;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   display: inline-block;
 }
 
@@ -96,4 +97,36 @@ button:hover {
   border-radius: 5px;
   padding: 20px;
   color: #333;
+}
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  #word-display {
+    font-size: 2.5rem;
+  }
+
+  #japanese-word {
+    font-size: 1.5rem;
+  }
+
+  #timer {
+    font-size: 36px;
+  }
+
+  input {
+    font-size: 20px;
+  }
+
+  #typed-word {
+    font-size: 2.0rem;
+  }
+
+  button {
+    font-size: 20px;
+    margin-left: 10px;
+  }
 }
