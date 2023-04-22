@@ -70,6 +70,10 @@ input {
   display: inline-block;
 }
 
+.input-Description {
+  margin: 20px;
+}
+
 #typed-word {
   font-size: 2.4rem;
   text-align: center;
