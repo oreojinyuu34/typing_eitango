@@ -1,5 +1,14 @@
 let correctChars = 0;
+let totalCorrectChars = 0; // この行を追加
 let mistakes = 0;
+
+let progress = 0;
+let maxProgress = 100;
+
+function updateProgressBar() {
+  const progressBar = document.getElementById("progress-bar");
+  progressBar.style.width = progress + "%";
+}
 
 async function loadWords() {
   try {
@@ -18,44 +27,57 @@ function displayWord(word) {
   englishWord.textContent = word.word;
   japaneseWord.textContent = word.meaning;
 }
+function toFullWidth(str) {
+  return str.replace(
+    /[-\_\+\!\@\#\$\%\^\&\*\(\)\=\[\]\{\}\\\|\;\:\'\"\,\.\?\/\<\>\~]/g,
+    function (s) {
+      return String.fromCharCode(s.charCodeAt(0) + 0xfee0);
+    }
+  );
+}
 
 function checkTyping(e) {
-  if (e.key === " ") {
-    const typedWord = e.target.value.trim();
-    const englishWordElement = document.getElementById("english-word");
+  let typedWord = e.target.value;
+  typedWord = toFullWidth(typedWord);
+  const englishWordElement = document.getElementById("english-word");
+  const typedLetters = typedWord.split("");
+  const targetLetters = currentWord.word.split("");
+  let isError = false;
+  let tempCorrectChars = 0;
 
-    if (typedWord === currentWord.word) {
-      correctChars += typedWord.length;
+  const coloredLetters = targetLetters.map((letter, index) => {
+    if (index < typedLetters.length) {
+      if (letter === typedLetters[index]) {
+        tempCorrectChars++;
+        return `<span style="color: green">${letter}</span>`;
+      } else {
+        isError = true;
+        return `<span style="color: red">${letter}</span>`;
+      }
+    } else {
+      return letter;
+    }
+  });
+
+  englishWordElement.innerHTML = coloredLetters.join("");
+
+  if (e.key === " ") {
+    if (typedWord.trim() === currentWord.word) {
+      totalCorrectChars += correctChars;
       e.target.value = "";
       currentWord = getRandomWord(words);
       displayWord(currentWord);
-    }
-  } else {
-    const typedWord = e.target.value;
-    const englishWordElement = document.getElementById("english-word");
-    const typedLetters = typedWord.split("");
-    const targetLetters = currentWord.word.split("");
-    let isError = false;
-
-    const coloredLetters = targetLetters.map((letter, index) => {
-      if (index < typedLetters.length) {
-        if (letter === typedLetters[index]) {
-          return `<span style="color: green">${letter}</span>`;
-        } else {
-          isError = true;
-          return `<span style="color: red">${letter}</span>`;
-        }
-      } else {
-        return letter;
-      }
-    });
-
-    englishWordElement.innerHTML = coloredLetters.join("");
-
-    if (isError) {
+    } else {
       mistakes++;
     }
+    correctChars = 0;
+  } else {
+    progress += tempCorrectChars - correctChars;
+    correctChars = tempCorrectChars;
   }
+
+  progress = Math.min(progress, maxProgress);
+  updateProgressBar(); // 進行バーの更新
 }
 
 function getRandomWord(words) {
@@ -68,6 +90,7 @@ let words = [];
 
 function startTimer() {
   let timeLeft = 60;
+
   const timerElement = document.getElementById("timer");
   timerElement.textContent = timeLeft;
 
@@ -83,11 +106,12 @@ function startTimer() {
       document.getElementById("results").style.display = "block";
       document.getElementById(
         "correct-chars"
-      ).textContent = `正しい入力文字数: ${correctChars}`;
+      ).textContent = `正しい入力文字数: ${totalCorrectChars}`;
+
       document.getElementById(
         "mistakes"
       ).textContent = `タイプミスの回数: ${mistakes}`;
-      const charsPerSecond = (correctChars / 60).toFixed(2);
+      const charsPerSecond = (totalCorrectChars / 60).toFixed(2); // この行を修正
       document.getElementById(
         "chars-per-second"
       ).textContent = `一秒あたりの入力文字数: ${charsPerSecond}`;
@@ -98,6 +122,8 @@ function startTimer() {
 document.getElementById("start-btn").addEventListener("click", () => {
   // リセット処理
   correctChars = 0;
+  totalCorrectChars = 0;
+
   mistakes = 0;
   document.getElementById("typed-word").value = "";
   document.getElementById("english-word").innerHTML = "";

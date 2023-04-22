@@ -97,6 +97,21 @@ button:hover {
   border-radius: 5px;
   padding: 20px;
   color: #333;
+  font-size: 1.4rem;
+}
+
+#progress-container {
+  margin: auto;
+  width: 60%;
+  background-color: #ccc;
+  height: 20px;
+
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #3F704D;
 }
 
 /* Media Queries */
