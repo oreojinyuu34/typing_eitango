@@ -20,6 +20,10 @@ h1 {
   font-size: 36px;
 }
 
+header p {
+  font-size: 24px;
+}
+
 main {
   max-width: 800px;
   margin: 0 auto;
@@ -119,6 +123,11 @@ button:hover {
   h1 {
     font-size: 28px;
   }
+
+  header p {
+    font-size: 18px;
+  }
+
 
   #word-display {
     font-size: 2.5rem;
