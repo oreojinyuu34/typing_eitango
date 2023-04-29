@@ -12,7 +12,7 @@ function updateProgressBar() {
 
 async function loadWords() {
   try {
-    const response = await fetch("words.json");
+    const response = await fetch("./js/words.json");
     const data = await response.json();
     return data.sentences;
   } catch (error) {
