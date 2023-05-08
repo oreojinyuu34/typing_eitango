@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>タイピング練習</title>
-    <link rel="stylesheet" href="./assets/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
     <header>
-        <h1>タイピング練習</h1>
-        <p>☆中学生向け英単語☆</p>
+      <h1>タイピング練習</h1>
+      <!-- <p>☆中学生向け英単語☆</p> -->
     </header>
     <main>
-        <div id="timer-container">
-            <p id="timer">60</p>
+      <div id="timer-container">
+        <p id="timer">60</p>
+      </div>
+      <div id="word-display">
+        <p id="english-word"></p>
+        <p id="japanese-word"></p>
+      </div>
+      <div id="input-container">
+        <div id="progress-container">
+          <div id="progress-bar"></div>
         </div>
-        <div id="word-display">
-            <p id="english-word"></p>
-            <p id="japanese-word"></p>
+        <div>
+          <input type="text" id="typed-word" disabled />
+          <p class="input-Description">
+            入力後スペースキーを押してください<br />正解時は次の単語に行きます
+          </p>
         </div>
-        <div id="input-container">
-            <div id="progress-container">
-              <div id="progress-bar"></div>
-          </div>
-          <div>
-              <input type="text" id="typed-word" disabled>
-              <p class="input-Description">入力後スペースキーを押してください<br>正解時は次の単語に行きます
-              </p>
-          </div>
 
-            <button id="start-btn">開始</button>
+        <button id="start-btn">開始</button>
+      </div>
+      <div id="results-container">
+        <div id="results" style="display: none">
+          <h2>結果</h2>
+          <p id="correct-chars">正しい入力文字数: 0 :回</p>
+          <p id="chars-per-second">一秒あたりの入力文字数: 0.00</p>
+          <p id="mistakes">タイプミスの回数: 0</p>
         </div>
-        <div id="results-container">
-            <div id="results" style="display: none;">
-                <h2>結果</h2>
-                <p id="correct-chars">正しい入力文字数: 0 :回</p>
-                <p id="chars-per-second">一秒あたりの入力文字数: 0.00</p>
-                <p id="mistakes">タイプミスの回数: 0</p>
-            </div>
-        </div>
+      </div>
     </main>
     <script src="./js/script.js"></script>
-</body>
+  </body>
 </html>

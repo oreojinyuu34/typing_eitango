@@ -5,12 +5,16 @@
 }
 
 body {
+  width: 880px;
+  height: 80px;
+  margin: 0 auto;
   font-family: 'Arial', sans-serif;
-  background-color: #EBF5EE;
+  background-color: beige;
 }
 
 header {
   background-color: #3F704D;
+  border-radius: 10px 10px 0 0;
   color: #FFF;
   text-align: center;
   padding: 20px;
@@ -25,9 +29,10 @@ header p {
 }
 
 main {
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: #EBF5EE;
   padding: 20px;
+  box-shadow: 10px 10px 15px -5px #333333;
+  border-radius: 0 0 10px 10px;
 }
 
 #word-display {
