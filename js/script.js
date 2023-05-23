@@ -5,6 +5,10 @@ let mistakes = 0;
 let progress = 0;
 let maxProgress = 100;
 
+const typeSound = new Audio("./assets/audio/typing-sound.mp3");
+const wrongSound = new Audio("./assets/audio/wrong.mp3");
+const correctSound = new Audio("./assets/audio/correct.mp3");
+
 function updateProgressBar() {
   const progressBar = document.getElementById("progress-bar");
   progressBar.style.width = progress + "%";
@@ -49,9 +53,15 @@ function checkTyping(e) {
     if (index < typedLetters.length) {
       if (letter === typedLetters[index]) {
         tempCorrectChars++;
+        if (e.key !== " ") {
+          typeSound.play(); // タイピング音を再生する
+        }
         return `<span style="color: green">${letter}</span>`;
       } else {
         isError = true;
+        if (e.key !== " ") {
+          wrongSound.play(); // 間違いの音を再生する
+        }
         return `<span style="color: red">${letter}</span>`;
       }
     } else {
@@ -67,6 +77,7 @@ function checkTyping(e) {
       e.target.value = "";
       currentWord = getRandomWord(words);
       displayWord(currentWord);
+      correctSound.play(); // 正解の音を再生する
     } else {
       mistakes++;
     }
@@ -135,6 +146,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
   document.getElementById("typed-word").disabled = false;
   document.getElementById("typed-word").focus();
   startTimer();
+  typeSound.play(); // タイピング音を再生する
 
   // 初回の単語を表示
   currentWord = getRandomWord(words);
